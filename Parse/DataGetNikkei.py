@@ -68,7 +68,7 @@ def get_price(code):
 
 
 # get price changes up or down
-def get_netchange(html):
+def get_netchange(code):
     data = get_html(code)
     return scrape_netchange(data)
 
