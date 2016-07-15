@@ -36,9 +36,10 @@ def scrape_netchange(html):
 
     if soup.find("span", class_ = "icoUpGreen") :
         changed = soup.find("span", class_ = "icoUpGreen").string
-
     elif soup.find("span", class_ = "icoDownRed") :
         changed = soup.find("span", class_ = "icoDownRed").string
+    else:
+        return 0.0
     changed = changed.replace('%', '')
 
     return float(changed.split('（')[1].split('）')[0])

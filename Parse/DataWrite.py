@@ -4,7 +4,11 @@ from datetime import datetime, timezone, timedelta
 import time
 
 
-PRICE_FILE = './datas/prices/'
+FILE_PRICE= './datas/prices/'
+FILE_NETCHANGE = './datas/netchange/'
+FILE_VOLUME = './datas/volume/'
+FILE_PBR = './datas/PBR/'
+FILE_PER = './datas/PER/'
 
 def get_nowtime():
     now = datetime.now()
@@ -12,12 +16,19 @@ def get_nowtime():
     return ret
 
 
-def write_price(code, data):
-    f = open(PRICE_FILE+code, 'a')
-    now = get_nowtime()
+def write(filename, data, now):
+    f = open(filename, 'a')
     f.write(now + ' ' + str(data) + "\n")
     f.close()
+
+def write_all(code, data):
+    now = get_nowtime()
+    write(FILE_PRICE+code, data['price'], now)
+    write(FILE_NETCHANGE+code, data['netchange'], now)
+    write(FILE_VOLUME+code, data['volume'], now)
+    write(FILE_PBR+code, data['PBR'], now)
+    write(FILE_PER+code, data['PER'], now)
     return True
 
 
-print(get_nowtime())
+
