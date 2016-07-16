@@ -9,8 +9,8 @@ sys.path.append('./general_lib')
 import DataGetNikkei as gdata
 import Arbitrage as arb
 
-#DEMO_DIR = './datas/demo_price/'
-DEMO_DIR = './datas/demo_price2/'
+DEMO_DIR = './datas/demo_price/'
+#DEMO_DIR = './datas/demo_price2/'
 ALLOWED_DEVIATION = 10.0
 ARBITRAGE_NETCHANGE = 5.0
 
