@@ -36,8 +36,8 @@ def check_arbitrage_chance(data_list, allowed, arb_chance):
     gap = data_list[sorted_data[len(sorted_data)-1]] - data_list[sorted_data[0]]
 
     if arb_chance <= gap and gap <= allowed:
-        ret['long'].append(sorted_data[len(sorted_data)-1])
-        ret['short'].append(sorted_data[0])
+        ret['short'].append(sorted_data[len(sorted_data)-1])
+        ret['long'].append(sorted_data[0])
     else:
         return None
     return ret
